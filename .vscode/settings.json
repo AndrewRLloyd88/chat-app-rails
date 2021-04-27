@@ -1,0 +1,6 @@
+{
+  "html.format.enable": false,
+  "html.format.preserveNewLines": false,
+  "python.linting.lintOnSave": false,
+  "ruby.linter.run": "onSave"
+}
