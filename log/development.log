@@ -1976,3 +1976,273 @@ Processing by RoomsController#show as HTML
 Completed 200 OK in 42ms (Views: 38.7ms | ActiveRecord: 0.4ms | Allocations: 8902)
 
 
+Started GET "/rooms/4" for 127.0.0.1 at 2021-04-27 14:05:29 -0700
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/rooms_controller.rb:64:in `set_room'
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:64:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:9:in `generate'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Creative-Intern-286"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9:in `generate'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["username", "Creative-Intern-286"], ["created_at", "2021-04-27 21:05:29.106069"], ["updated_at", "2021-04-27 21:05:29.106069"]]
+  ↳ app/models/user.rb:9:in `generate'
+  [1m[36mTRANSACTION (15.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:9:in `generate'
+  Rendered rooms/index.html.erb within layouts/application (Duration: 35.9ms | Allocations: 10112)
+  Rendered layout layouts/application.html.erb (Duration: 36.3ms | Allocations: 10181)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 16.3ms | Allocations: 14949)
+
+
+  
+ActionView::Template::Error (undefined method `username' for 1:Integer):
+    3: <div class="container-fluid">
+    4:   <div class="row">
+    5:     <div class="col-3">
+    6:       <p>Hello <% current_user.username %> </p>
+    7:       <%= render 'form' , room: Room.new %>
+    8:       <hr>
+    9:       <% @rooms.each do |room| %>
+  
+app/views/rooms/index.html.erb:6
+app/controllers/rooms_controller.rb:12:in `show'
+Started GET "/rooms/4" for 127.0.0.1 at 2021-04-27 14:06:32 -0700
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/rooms_controller.rb:64:in `set_room'
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:64:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:9:in `generate'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Dangerous-Jackhammer-876"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9:in `generate'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["username", "Dangerous-Jackhammer-876"], ["created_at", "2021-04-27 21:06:32.948538"], ["updated_at", "2021-04-27 21:06:32.948538"]]
+  ↳ app/models/user.rb:9:in `generate'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:9:in `generate'
+  Rendered rooms/_form.html.erb (Duration: 1.4ms | Allocations: 781)
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:9
+  Rendered messages/_form.html.erb (Duration: 1.6ms | Allocations: 857)
+  Rendered rooms/index.html.erb within layouts/application (Duration: 27.4ms | Allocations: 14235)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.3ms | Allocations: 16063)
+Completed 200 OK in 40ms (Views: 28.3ms | ActiveRecord: 4.9ms | Allocations: 21207)
+
+
+Started GET "/rooms/4" for 127.0.0.1 at 2021-04-27 14:06:35 -0700
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:64:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered rooms/_form.html.erb (Duration: 1.8ms | Allocations: 399)
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:9
+  Rendered messages/_form.html.erb (Duration: 1.4ms | Allocations: 500)
+  Rendered rooms/index.html.erb within layouts/application (Duration: 12.4ms | Allocations: 2627)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 4255)
+Completed 200 OK in 24ms (Views: 17.1ms | ActiveRecord: 0.9ms | Allocations: 5245)
+
+
+Started GET "/rooms/4" for 127.0.0.1 at 2021-04-27 14:06:35 -0700
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:64:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered rooms/_form.html.erb (Duration: 2.5ms | Allocations: 399)
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:9
+  Rendered messages/_form.html.erb (Duration: 1.5ms | Allocations: 500)
+  Rendered rooms/index.html.erb within layouts/application (Duration: 13.4ms | Allocations: 2481)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 4109)
+Completed 200 OK in 24ms (Views: 18.0ms | ActiveRecord: 0.9ms | Allocations: 5097)
+
+
+Started GET "/rooms/4" for 127.0.0.1 at 2021-04-27 14:06:36 -0700
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:64:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered rooms/_form.html.erb (Duration: 1.2ms | Allocations: 399)
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:9
+  Rendered messages/_form.html.erb (Duration: 1.6ms | Allocations: 500)
+  Rendered rooms/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 2481)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 4109)
+Completed 200 OK in 17ms (Views: 13.4ms | ActiveRecord: 0.6ms | Allocations: 5096)
+
+
+Started GET "/rooms/4" for 127.0.0.1 at 2021-04-27 14:06:36 -0700
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:64:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered rooms/_form.html.erb (Duration: 1.3ms | Allocations: 399)
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:9
+  Rendered messages/_form.html.erb (Duration: 1.7ms | Allocations: 500)
+  Rendered rooms/index.html.erb within layouts/application (Duration: 11.2ms | Allocations: 2481)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 4109)
+Completed 200 OK in 20ms (Views: 15.8ms | ActiveRecord: 0.6ms | Allocations: 5096)
+
+
+Started GET "/rooms/4" for 127.0.0.1 at 2021-04-27 14:06:36 -0700
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:64:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered rooms/_form.html.erb (Duration: 1.5ms | Allocations: 399)
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:9
+  Rendered messages/_form.html.erb (Duration: 2.2ms | Allocations: 500)
+  Rendered rooms/index.html.erb within layouts/application (Duration: 10.7ms | Allocations: 2481)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 4109)
+Completed 200 OK in 22ms (Views: 17.4ms | ActiveRecord: 0.7ms | Allocations: 5143)
+
+
+Started GET "/rooms/4" for 127.0.0.1 at 2021-04-27 14:06:36 -0700
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:64:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered rooms/_form.html.erb (Duration: 1.4ms | Allocations: 399)
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:9
+  Rendered messages/_form.html.erb (Duration: 1.8ms | Allocations: 500)
+  Rendered rooms/index.html.erb within layouts/application (Duration: 10.9ms | Allocations: 2481)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 4109)
+Completed 200 OK in 22ms (Views: 17.5ms | ActiveRecord: 0.6ms | Allocations: 6204)
+
+
+Started GET "/rooms/4" for 127.0.0.1 at 2021-04-27 14:06:36 -0700
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:64:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered rooms/_form.html.erb (Duration: 7.1ms | Allocations: 399)
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:9
+  Rendered messages/_form.html.erb (Duration: 1.0ms | Allocations: 500)
+  Rendered rooms/index.html.erb within layouts/application (Duration: 39.9ms | Allocations: 2604)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 43.9ms | Allocations: 4287)
+Completed 200 OK in 66ms (Views: 44.8ms | ActiveRecord: 0.5ms | Allocations: 5389)
+
+
+Started GET "/rooms/4" for 127.0.0.1 at 2021-04-27 14:07:13 -0700
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:64:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered rooms/_form.html.erb (Duration: 3.1ms | Allocations: 709)
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:9
+  Rendered messages/_form.html.erb (Duration: 2.0ms | Allocations: 779)
+  Rendered rooms/index.html.erb within layouts/application (Duration: 15.9ms | Allocations: 3643)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 5492)
+Completed 200 OK in 33ms (Views: 25.5ms | ActiveRecord: 0.8ms | Allocations: 7247)
+
+
+Started GET "/rooms/4" for 127.0.0.1 at 2021-04-27 14:07:22 -0700
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:64:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered rooms/_form.html.erb (Duration: 1.3ms | Allocations: 399)
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:9
+  Rendered messages/_form.html.erb (Duration: 1.2ms | Allocations: 500)
+  Rendered rooms/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 2482)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 4110)
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 0.5ms | Allocations: 5098)
+
+
+Started GET "/rooms/4" for 127.0.0.1 at 2021-04-27 14:07:22 -0700
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:64:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered rooms/_form.html.erb (Duration: 2.6ms | Allocations: 399)
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:9
+  Rendered messages/_form.html.erb (Duration: 1.5ms | Allocations: 500)
+  Rendered rooms/index.html.erb within layouts/application (Duration: 13.8ms | Allocations: 2482)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 4110)
+Completed 200 OK in 25ms (Views: 18.3ms | ActiveRecord: 0.8ms | Allocations: 5097)
+
+
+Started GET "/rooms/4" for 127.0.0.1 at 2021-04-27 14:07:23 -0700
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:64:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered rooms/_form.html.erb (Duration: 2.4ms | Allocations: 399)
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:9
+  Rendered messages/_form.html.erb (Duration: 1.5ms | Allocations: 500)
+  Rendered rooms/index.html.erb within layouts/application (Duration: 14.6ms | Allocations: 2482)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 4110)
+Completed 200 OK in 27ms (Views: 19.4ms | ActiveRecord: 0.8ms | Allocations: 5098)
+
+
