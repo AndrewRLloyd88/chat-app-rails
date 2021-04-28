@@ -1,6 +1,19 @@
+body {
+  overflow-y: hidden;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+}
+
 .chat-room {
   height: calc(100vh - 20px);
   overflow-y: scroll;
+
+  #messages {
+    padding-bottom: 100px;
+  }
+
   .message {
     min-height: 59px;
     .content-container {
@@ -27,10 +40,13 @@
   }
 }
   .chat-box {
-    position: absolute;
-    bottom: 0;
+    position: fixed;
+    bottom: 20px;
     padding: 20px;
-    width: calc(100% - 15px);
+    width: 75%;
+    margin-left: -15px;
+    background-color: white;
+    border-top: 1px solid #eeeeee;
     input[type=text] {
       height: 45px;
       font-size: 18px;
@@ -75,4 +91,8 @@
     color: #777777;
     font-weight: light;
   }
+}
+
+.rooms-sidebar {
+  border-right: 1px solid #eeeeee;
 }
