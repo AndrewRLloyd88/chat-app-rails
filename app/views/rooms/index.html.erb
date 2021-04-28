@@ -13,6 +13,7 @@
       <hr>
       <%= render 'form' , room: Room.new %>
       <hr>
+      <div class="rooms-container">
       <% @rooms.each do |room| %>
         <%= link_to room, class: "room-link" do %> 
         <% active_class = (@room == room) ? 'active' : '' %> 
@@ -26,6 +27,7 @@
         </div>
         <% end %> 
       <% end %>  
+    </div>
       </div>
       <div class="col-9">
         <% if @room.present? %>

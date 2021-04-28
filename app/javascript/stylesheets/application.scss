@@ -107,3 +107,8 @@ body {
 .rooms-sidebar {
   border-right: 1px solid #eeeeee;
 }
+
+.rooms-container {
+  height: 500px;
+  overflow-y: scroll;
+}
